@@ -2,4 +2,29 @@
 
 {% load static %}
 
-{% block titulo %} Reseñas {% endblock %}
+{% block titulo %}Reseñas{% endblock %}
+
+{% block banner %} 
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <h1 class="mb-5">  Reseñas </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+{% block contenido %}
+{% for reseña in reseñas %}
+    <h3>{{ reseña.titulo }}</h3>
+<h4>{{ reseña.subtitulo }}</h4>
+<p>{{ reseña.autor }} - {{ reseña.fecha }}</p>
+<a class="btn btn-info" href="{% url 'reseña_detalle' reseña.id %}">Ver mas</a>
+<br>
+{% endfor %}
+<br><br><br><br>
+<a class="btn btn-primary" href="{% url 'agregar' %}">Agregar reseña</a>
+{% endblock %}

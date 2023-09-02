@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog</title>
+        <title>Blog - {% block titulo %}{% endblock %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Google fonts-->
@@ -21,7 +21,7 @@
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
                 <a class="navbar-brand" href="{% url 'reseñas' %}">Reseñas</a>
                 <a class="btn btn-primary" href="{% url 'introduccion' %}">Acerca de mi</a>
-                <a class="btn btn-primary" href="#signup">Iniciar Sesion</a>
+                <a class="btn btn-primary" href="{% url 'login' %}">Iniciar Sesion</a>
             </div>
         </nav>
         <!-- Masthead-->

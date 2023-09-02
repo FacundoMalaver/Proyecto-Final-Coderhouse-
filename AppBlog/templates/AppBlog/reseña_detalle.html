@@ -1,0 +1,14 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h1>{{ reseña.titulo }}</h1> <br>
+<h2>{{reseña.subtitulo}}</h2>
+<br><br><br>
+<h4><span style="font-family: 'Arial;">{{reseña.cuerpo}}</span></h4>
+<br><br><br>
+<h5>{{reseña.autor}} - {{reseña.fecha}}</h5>
+
+{% endblock %}

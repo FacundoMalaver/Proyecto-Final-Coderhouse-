@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% block titulo %}Inicio{% endblock %}
+
 {% block banner %} 
 <header class="masthead">
     <div class="container position-relative">
@@ -15,3 +17,8 @@
     </div>
 </header>
 {% endblock %}
+
+{% block contenido %}
+{{ mensaje }}
+{% endblock %}
+
