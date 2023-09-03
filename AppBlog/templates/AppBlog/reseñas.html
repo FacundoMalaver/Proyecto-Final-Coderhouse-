@@ -2,9 +2,11 @@
 
 {% load static %}
 
+
 {% block titulo %}Reseñas{% endblock %}
 
 {% block banner %} 
+{{ mensaje }}
 <header class="masthead">
     <div class="container position-relative">
         <div class="row justify-content-center">
@@ -20,11 +22,12 @@
 {% block contenido %}
 {% for reseña in reseñas %}
     <h3>{{ reseña.titulo }}</h3>
-<h4>{{ reseña.subtitulo }}</h4>
-<p>{{ reseña.autor }} - {{ reseña.fecha }}</p>
-<a class="btn btn-info" href="{% url 'reseña_detalle' reseña.id %}">Ver mas</a>
-<br>
+    <div><img src="{{ reseña.imagen.url }}" height="300">></div>
+    <h4>{{ reseña.subtitulo }}</h4>
+    <p>{{ reseña.autor }} - {{ reseña.fecha }}</p><br>
+    <a class="btn info" href="{% url 'reseña_detalle' reseña.id %}">Ver mas</a>
+    <br><br><br>
 {% endfor %}
 <br><br><br><br>
-<a class="btn btn-primary" href="{% url 'agregar' %}">Agregar reseña</a>
+<a class="btn default" href="{% url 'reseña_form' %}">Agregar reseña</a>
 {% endblock %}

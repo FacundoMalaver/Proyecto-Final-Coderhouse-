@@ -4,11 +4,16 @@
 
 {% block contenido %}
 
-<h1>{{ reseña.titulo }}</h1> <br>
+<h1 class="text-center">{{ reseña.titulo }}</h1> <br><br>
+<div><img src="{{ reseña.imagen.url }}" height="300" class="center">"></div><br><br>
 <h2>{{reseña.subtitulo}}</h2>
 <br><br><br>
-<h4><span style="font-family: 'Arial;">{{reseña.cuerpo}}</span></h4>
+<h4><span style="font-family: 'Arial'">{{reseña.cuerpo}}</span></h4>
 <br><br><br>
 <h5>{{reseña.autor}} - {{reseña.fecha}}</h5>
 
+{% if user.is_superuser %}
+ <a class="btn warning" href="{% url 'editarReseña' reseña.id %}">Editar</a>
+ <a class="btn danger" href="{% url 'eliminarReseña' reseña.id %}">Eliminar</a>
+{% endif %}
 {% endblock %}

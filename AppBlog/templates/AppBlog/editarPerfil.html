@@ -1,0 +1,16 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} Editar perfil {% endblock %}
+
+{% block contenido %}
+<h3>{{ mensaje }}</h3>
+<form action="{% url 'editarPerfil' %}" method="POST"> {% csrf_token %}
+    <table>
+        {{ formulario.as_table }}
+    </table>
+
+    <input type="submit", value="Aplicar cambios">
+</form>
+{% endblock %}

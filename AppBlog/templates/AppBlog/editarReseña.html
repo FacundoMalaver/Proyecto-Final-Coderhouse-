@@ -1,0 +1,16 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}Agregar Reseña{% endblock %}
+
+{% block contenido %}
+<h2>FORMULARIO - Editar reseña</h2>
+<form enctype="multipart/form-data" action="{% url 'editarReseña' reseña.id %}" method="POST"> {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" name="submit" value="Editar reseña">
+</form>
+{{ mensaje }}
+{% endblock %}

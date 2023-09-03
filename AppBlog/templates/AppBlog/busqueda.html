@@ -1,0 +1,32 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}Agregar Reseña{% endblock %}
+
+{% block contenido %}
+    <h1>Busqueda de reseñas</h1>
+
+    <br/>
+    <form action="{% url 'busqueda' %}">
+        Buscar <input type="text" name="titulo" value="{{request.GET.titulo}}" placeholder="Buscar reseñas"/>
+        <input type="submit" name="submit" value="Buscar"/>
+    </form>
+    {% if submitbutton == 'Buscar' and request.GET.titulo != '' %}
+        {% if reseñas %}
+            <h1>Resultados de la busqueda de <b>{{ request.GET.titulo }}</b></h1>
+            <br/><br/>
+
+            {% for reseña in reseñas %}
+            <h3>{{ reseña.titulo }}</h3>
+            <div><img src="{{ reseña.imagen.url }}" height="300">></div>
+            <h4>{{ reseña.subtitulo }}</h4>
+            <p>{{ reseña.autor }} - {{ reseña.fecha }}</p><br>
+            <a class="btn info" href="{% url 'reseña_detalle' reseña.id %}">Ver mas</a>
+            <br><br><br>
+            {% endfor %}
+        {% else %}
+            No search results for this query
+        {% endif %}
+    {% endif %}
+{% endblock %}
