@@ -12,15 +12,15 @@ from django.urls import reverse_lazy
 def inicio(request):
     return render(request, "AppBlog/inicio.html")
 
+def acercaDeMi(request):
+    return render(request, "AppBlog/acercaDeMi.html")
+
 def perfil(request):
     return render(request, "AppBlog/perfil.html")
 
 def reseñas(request):
     reseñas=Reseña.objects.all()
     return render(request, "AppBlog/reseñas.html", {"reseñas":reseñas})
-
-def introduccion(request):
-    return render(request, "AppBlog/introduccion.html")
 
 @login_required
 def agregar(request):
@@ -94,25 +94,20 @@ def registrarse(request):
     else:
         form=RegistroUsuarioForm()
         return render(request, "AppBlog/registro.html", {"formulario":form})
-
+    
 @login_required
 def editarPerfil(request):
-    usuario=request.user
-    if request.method=="POST":
-        form=UserEditForm(request.POST, instance=usuario)
+    usuario = request.user
+    if request.method == "POST":
+        form = UserEditForm(request.POST, instance=usuario)
         if form.is_valid():
-            info=form.cleaned_data
-            email=info["email"]
-            password1=info["password1"]
-            password2=info["password2"]
-            usuario=User(email=email, password1=password1, password2=password2)
-            usuario.save()
-            return render(request, "AppBlog/perfil.html", {"mensaje":'Perfil editado'})
+            form.save()  # Esto actualizará el nombre de usuario, correo electrónico y contraseña si se modifican
+            return render(request, "AppBlog/perfil.html", {"mensaje": 'Perfil editado'})
         else:
-            return render(request, "AppBlog/editarPerfil.html", {"formulario":form, "mensaje":'Datos invalidos'})
+            return render(request, "AppBlog/editarPerfil.html", {"formulario": form, "mensaje": 'Datos inválidos'})
     else:
-        form=UserEditForm(instance=usuario)
-        return render(request, "AppBlog/editarPerfil.html", {"formulario":form})
+        form = UserEditForm(instance=usuario)
+        return render(request, "AppBlog/editarPerfil.html", {"formulario": form})
 
 def busqueda(request):
     if request.method == 'GET':
