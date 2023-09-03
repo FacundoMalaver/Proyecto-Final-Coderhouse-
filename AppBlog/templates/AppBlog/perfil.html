@@ -13,8 +13,11 @@
     />
     <div class="media-body">
       <h2 class="account-heading">{{ user.username }}</h2>
-      <p class="text-secondary">Email:{{ user.email }}</p><br><br><br>
-      <a class="btn default" href="{% url 'editarPerfil' %}">Editar perfil</a>
+      <p class="text-secondary">Sobre mi:{{ user.first_name }}</p>
+      <p class="text-secondary">Email:{{ user.email }}</p>
+      <p>Mi sitio:</p><a class="text-secondary" href="{{ user.last_name }}">{{ user.last_name }}</a><br><br>
+      <a class="btn default" href="{% url 'editarPerfil' %}">Editar usuario</a>
+      <a class="btn default" href="{% url 'agregarAvatar' %}">Editar imagen de perfil</a>
     </div>
   </div>
 </div>

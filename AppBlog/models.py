@@ -18,5 +18,5 @@ class Portada(models.Model):
     reseña=models.ForeignKey(Reseña, on_delete=models.CASCADE, null=True, blank=True)
 
 class Avatar(models.Model):
-    imagen=models.ImageField(upload_to='avatares')
-    reseña=models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    avatar=models.ImageField(upload_to='avatares')
+    user=models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)

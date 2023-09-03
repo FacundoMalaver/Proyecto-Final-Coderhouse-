@@ -1,0 +1,15 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}Agregar avatar{% endblock %}
+
+{% block contenido %}
+<form enctype="multipart/form-data" action="{% url 'agregarAvatar' %}" method="POST"> {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" name="submit" value="Subir imagen">
+</form>
+{{ mensaje }}
+{% endblock %}

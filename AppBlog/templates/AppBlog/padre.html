@@ -108,6 +108,7 @@
             {% if user.is_authenticated %}
             <a href="{% url 'logout' %}"><i class="fa fa-fw fa-user"></i>Cerrar Sesion</a>
             <a class="navbar-brand" href="{% url 'perfil' %}">Hola {{ user.username }}!</a>
+            <img src="{{ avatar }}" alt="Avatar" style="width: 40px;height: 40px;">
             {% else %}
             <a href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i>Iniciar Sesion</a>
             <a href="{% url 'registro' %}">Registrarse</a>
