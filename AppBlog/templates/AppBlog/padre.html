@@ -103,7 +103,7 @@
             <a class="active" href="{% url 'inicio' %}"><i class="fa fa-fw fa-home"></i> Inicio</a>
             <a href="{% url 'reseñas' %}"></i> Reseñas</a> 
             <a href="{% url 'busqueda' %}"><i class="fa fa-fw fa-search"></i>Busqueda</a> 
-            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a> 
+            <a href="{% url 'inbox' %}"><i class="fa fa-fw fa-envelope"></i> Inbox</a> 
             <a href="{% url 'acercaDeMi' %}">Acerca de mi</a>
             {% if user.is_authenticated %}
             <a href="{% url 'logout' %}"><i class="fa fa-fw fa-user"></i>Cerrar Sesion</a>

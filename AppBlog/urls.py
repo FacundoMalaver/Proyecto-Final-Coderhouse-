@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import *
 
 from django.contrib.auth.views import LogoutView
@@ -19,5 +19,6 @@ urlpatterns = [
 
         path('editarPerfil/', editarPerfil, name='editarPerfil'),
         path('perfil/', perfil, name='perfil'),
-        path('agregarAvatar', agregarAvatar, name='agregarAvatar')
+        path('agregarAvatar', agregarAvatar, name='agregarAvatar'),
+        path('AppMail', include('AppMail.urls'))
 ]

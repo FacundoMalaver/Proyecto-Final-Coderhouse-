@@ -1,0 +1,9 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<h1>Bandeja de salida</h1>
+<a class="btn info" href="{% url 'inbox' %}">Mensajes recibidos</a>
+<a class="btn info" href="{% url 'escribir' %}">Crear Mensaje</a>
+{% endblock %}

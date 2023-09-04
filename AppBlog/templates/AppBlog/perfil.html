@@ -13,6 +13,7 @@
     />
     <div class="media-body">
       <h2 class="account-heading">{{ user.username }}</h2>
+      <img src="{{ avatar }}" alt="Avatar" style="width: 200px;height: 200px;">
       <p class="text-secondary">Sobre mi:{{ user.first_name }}</p>
       <p class="text-secondary">Email:{{ user.email }}</p>
       <p>Mi sitio:</p><a class="text-secondary" href="{{ user.last_name }}">{{ user.last_name }}</a><br><br>
