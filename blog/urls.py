@@ -26,7 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name="inicio"),
     path('AppBlog/', include('AppBlog.urls')),
+    path('AppLogin', include('AppLogin.urls')),
     path('AppMail', include('AppMail.urls'))
+
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

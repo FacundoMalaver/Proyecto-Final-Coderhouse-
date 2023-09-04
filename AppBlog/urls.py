@@ -1,8 +1,6 @@
 from django.urls import path, include
 from .views import *
 
-from django.contrib.auth.views import LogoutView
-
 urlpatterns = [
         path('reseñas/', reseñas, name="reseñas"),
         path('reseña/<pk>', ReseñaDetalle.as_view(), name="reseña_detalle"),
@@ -13,12 +11,6 @@ urlpatterns = [
         path('editarReseña/<pk>', ReseñaUpdate.as_view(), name="editarReseña"),
         path('eliminarReseña/<id>', eliminarReseña, name="eliminarReseña"),
 
-        path('login/', iniciar_sesion, name='login'),
-        path('registro/', registrarse, name='registro'),
-        path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
-
-        path('editarPerfil/', editarPerfil, name='editarPerfil'),
-        path('perfil/', perfil, name='perfil'),
-        path('agregarAvatar', agregarAvatar, name='agregarAvatar'),
-        path('AppMail', include('AppMail.urls'))
+        path('AppLogin', include('AppLogin.urls')),
+        path('AppMail', include('AppMail.urls')),
 ]
