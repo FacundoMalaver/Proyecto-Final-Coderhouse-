@@ -1,0 +1,16 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+{% block titulo %}Mensajes{% endblock %}
+
+{% block contenido %}
+<div class="center">
+	<form method="post" class="card"> {% csrf_token %}
+		<p>Estas seguro que quieres eliminar este mensaje?</p>
+		<p class="form-buttons">
+			<input type="submit" class="btn btn-primary" value="Delete">
+			<a href="{% url 'sentbox'%}" class="btn btn-outline">Cancel</a>
+		</p>
+	</form>
+</div>
+{% endblock %}

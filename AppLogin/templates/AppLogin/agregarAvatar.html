@@ -1,8 +1,7 @@
 {% extends "AppBlog/padre.html" %}
 
 {% load static %}
-
-{% block titulo %}Agregar avatar{% endblock %}
+{% block titulo %}Perfil - {{ user.username }}{% endblock %}
 
 {% block contenido %}
 <form enctype="multipart/form-data" action="{% url 'agregarAvatar' %}" method="POST"> {% csrf_token %}

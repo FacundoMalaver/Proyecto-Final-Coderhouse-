@@ -7,7 +7,7 @@ class Reseña(models.Model):
     titulo=models.CharField(max_length=50)
     subtitulo=models.CharField(max_length=100)
     fecha=models.DateField(default=datetime.date.today)
-    autor=models.CharField(max_length=20, default='Anonimo')
+    autor=models.CharField(max_length=20)
     cuerpo=models.CharField(max_length=1000)
     imagen=models.ImageField(upload_to='portadas')
     def __str__(self):

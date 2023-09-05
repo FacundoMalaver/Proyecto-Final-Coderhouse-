@@ -2,8 +2,6 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.views.generic import DetailView, UpdateView
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
@@ -35,7 +33,7 @@ def agregar(request):
             reseñas.save()
             mensaje="Reseña guardada"
         else:  
-            mensaje=form.errors.as_data()
+            mensaje="Datos invalidos"
         reseñas=Reseña.objects.all()
         return render(request, "AppBlog/reseñas.html", {"mensaje":mensaje, "reseñas":reseñas, "avatar":obtenerAvatar(request)})
     else:
@@ -60,10 +58,6 @@ class ReseñaUpdate(UpdateView, LoginRequiredMixin):
 class ReseñaDetalle(DetailView):
     model=Reseña
     template_name="AppBlog/reseña_detalle.html"
-    
-
-    
-
 
 def busqueda(request):
     if request.method == 'GET':

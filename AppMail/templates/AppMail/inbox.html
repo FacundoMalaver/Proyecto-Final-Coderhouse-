@@ -1,9 +1,17 @@
 {% extends "AppBlog/padre.html" %}
 
 {% load static %}
+{% block titulo %}Mensajes{% endblock %}
 
 {% block contenido %}
 <h1>Bandeja de entrada</h1>
 <a class="btn info" href="{% url 'sentbox' %}">Mensajes Enviados</a>
 <a class="btn info" href="{% url 'escribir' %}">Crear Mensaje</a>
+{% for mensaje in mensajes %}
+            <h3>{{ mensaje.emisario }}</h3>
+            <h4>{{ mensaje.asunto }}</h4>
+            <p>{{ mensaje.emisario }} - {{ mensaje.fecha }}</p>
+            <a class="btn info" href="{% url 'leer_mensaje' mensaje.id %}">Ver mensaje</a>
+            <br><br><br>
+{% endfor %}
 {% endblock %}

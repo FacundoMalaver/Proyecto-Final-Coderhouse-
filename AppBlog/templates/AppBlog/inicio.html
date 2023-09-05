@@ -2,20 +2,27 @@
 
 {% load static %}
 
-
-
+{% block titulo %}Inicio{% endblock %}
 {% block banner %} 
-<header class="logo">
-    <div class="container position-relative">
-        <div class="row justify-content-center">
-            <div class="col-xl-6">
-                <div class="text-center text-white">
-                    <h1 class="mb-5">Bienvenido</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<head>
+    <style>
+        .container {
+          position: relative;
+          text-align: center;
+          color: white;
+        }
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        </style>
+    </head>
+<div class="container">
+    <img src="media\new-masthead.jpg" alt="Banner" style="width:100%;">
+    <div class="centered"><h1>BIENVENIDO A MI PAGINA DE RESEÑAS</h1></div>
+  </div>
 {% endblock %}
 
 {% block contenido %}

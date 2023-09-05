@@ -2,12 +2,28 @@
 
 {% load static %}
 
-
-
-{% block banner %} 
-
-{% endblock %}
+{% block titulo %}Acerca de mi{% endblock %}
 
 {% block contenido %}
-{{ mensaje }}
+<style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<div class="content-section">
+    <div class="media">
+      <img
+        class="rounded-circle account-img"/>
+      <div class="media-body">
+        <img src="/media/acerca_de_mi.jpg" alt="Foto" class="center" style="height: 400px;">
+        <h2>Un poco sobre mi.</h2>
+        <p>Mi nombre es Facundo Rodriguez Malaver. Tengo 23 años y empece a programar hace solo unos meses. Siempre tuve un interes por la programacion, el cual fue creciendo cuando empece a interesarme mas por los videojuegos y como funcionaban. De chiquito siempre me sorprendia lo que supuestamente (para mi mente de niño) unas simples lineas de texto podian hacer en una computadora o consola. Empece este curso porque justamente queria empezar a entender como ese mundo, que simpre parecio tan fantastico y misterioso, de verdad funcionaba.</p>
+        <p>Aunque no se todavia si es a lo que me quiero dedicar de forma profesional, tengo algunas ideas para proyectos personales en las que estoy seguro puedo aplicar el conocimiento aprendido en esta clase.</p>
+        <h3>¿Por que reseñas de juegos?</h3>
+        <p>Por que es algo que yo conozco y me apasiona. Siempre ame los videojuegos, y conozco varios, por lo que es algo con lo que soy familiar.</p>
+      </div>
+    </div>
+  </div>
 {% endblock %}

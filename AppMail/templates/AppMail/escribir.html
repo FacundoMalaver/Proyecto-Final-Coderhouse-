@@ -1,7 +1,12 @@
 {% extends "AppBlog/padre.html" %}
 
 {% load static %}
-
+{% block titulo %}Mensajes{% endblock %}
 {% block contenido %}
-
+<form action="{% url 'escribir' %}" method="POST"> {% csrf_token %}
+    <table>
+        {{ formulario.as_table }}
+    </table>
+    <input type="submit" name="submit" value="Enviar mensaje">
+</form>
 {% endblock %}

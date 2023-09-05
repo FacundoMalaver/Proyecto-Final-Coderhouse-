@@ -1,0 +1,14 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+{% block titulo %}Mensajes{% endblock %}
+
+{% block contenido %}
+<br><br><br>
+<a class="btn info" href="{% url 'inbox' %}">Mensajes recibidos</a>
+<a class="btn info" href="{% url 'sentbox' %}">Mensajes Enviados</a>
+<a class="btn info" href="{% url 'escribir' %}">Crear Mensaje</a><br><br><br>
+<h2>{{ mensajes.asunto }}</h2>
+<p>{{ mensajes.cuerpo_mensaje }}</p>
+<p>Enviado por: {{ mensajes.emisario }} - {{ mensajes.fecha }}</p><br>
+{% endblock %}
