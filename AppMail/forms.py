@@ -9,4 +9,4 @@ class MensajeForm(forms.Form):
     fecha=forms.DateField(widget = forms.SelectDateWidget)
     class Meta:
         model=Mensajes
-        exclude=['emisario', 'leido', 'estado']
+        exclude=['emisario']

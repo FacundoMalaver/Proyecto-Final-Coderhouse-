@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.contrib.auth.models import User
+from .models import Avatar
 
 class RegistroUsuarioForm(UserCreationForm):
     username=forms.CharField(label="Usuario")
@@ -28,3 +29,6 @@ class UserEditForm(UserCreationForm):
 
 class AvatarForm(forms.Form):
     avatar=forms.ImageField(label="Imagen")
+    class Meta:
+        model=Avatar
+        exclude=['user']

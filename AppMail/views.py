@@ -29,7 +29,7 @@ def escribir(request):
             asunto=info['asunto']
             cuerpo_mensaje=info["cuerpo_mensaje"]
             fecha=info["fecha"]
-            mensajes=Mensajes(asunto=asunto, cuerpo_mensaje=cuerpo_mensaje, fecha=fecha, emisario=request.user, recipiente=recipiente, leido=False)
+            mensajes=Mensajes(asunto=asunto, cuerpo_mensaje=cuerpo_mensaje, fecha=fecha, emisario=request.user, recipiente=recipiente)
             mensajes.save()
             mensaje="Mensaje Enviado"
         else:

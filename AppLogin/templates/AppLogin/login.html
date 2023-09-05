@@ -3,8 +3,6 @@
 {% load static %}
 {% block titulo %}Iniciar Sesion{% endblock %}
 
-{% block titulo %}Iniciar Sesion{% endblock %}
-
 {% block contenido %}
 <h3>{{ mensaje }}</h3>
 <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
